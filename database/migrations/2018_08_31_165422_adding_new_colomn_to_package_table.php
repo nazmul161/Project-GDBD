@@ -11,12 +11,15 @@ class AddingNewColomnToPackageTable extends Migration
      *
      * @return void
      */
+    // Created by S O H A I L
     public function up()
     {
         //
         Schema::table('package', function (Blueprint $table) {
             $table->string('journey_time');
             $table->string('journey_place');
+            $table->string('capacity');
+            $table->string('transport');
         });
     }
 
@@ -31,6 +34,8 @@ class AddingNewColomnToPackageTable extends Migration
         Schema::table('package', function (Blueprint $table) {
             $table->dropColumn('journey_time');
             $table->dropColumn('journey_place');
+            $table->dropColumn('capacity');
+            $table->dropColumn('transport');
         });
 
     }
