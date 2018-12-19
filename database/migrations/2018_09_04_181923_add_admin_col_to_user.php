@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePackageTable extends Migration
+class AddAdminColToUser extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreatePackageTable extends Migration
      */
     public function up()
     {
-        Schema::create('package', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('hotel_id');
-            $table->string('fare');
-            $table->timestamps();
+        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('isAdmin');
         });
     }
 
@@ -28,6 +26,9 @@ class CreatePackageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('package');
+        //
+         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('isAdmin');
+        });
     }
 }
