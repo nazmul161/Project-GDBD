@@ -15,6 +15,7 @@ class CreateApartmentsTable extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('hotel_id');
             $table->string('apartment_no');
             $table->timestamps();
         });
