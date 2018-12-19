@@ -17,6 +17,7 @@ class CreateApartmentsTable extends Migration
             $table->increments('id');
             $table->string('hotel_id');
             $table->string('apartment_no');
+            $table->string('apartment_details');
             $table->timestamps();
         });
     }
