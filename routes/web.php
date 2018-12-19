@@ -16,4 +16,6 @@ Route::get('/', function () {
 });
 
 
+Route::post('save_hotel_info','HomeController@save_hotel_info_func');
+
 
