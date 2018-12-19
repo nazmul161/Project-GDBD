@@ -28,7 +28,7 @@ class AddAdminColToUser extends Migration
     {
         //
          Schema::table('users', function (Blueprint $table) {
-            $table->Column('isAdmin');
+            $table->dropColumn('isAdmin');
         });
     }
 }
