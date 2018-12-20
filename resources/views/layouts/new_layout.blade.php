@@ -73,9 +73,9 @@
 												
 								
 								@guest
-								<li class="main_nav_item"><a href="#">home</a></li>		
+								<li class="main_nav_item"><a href="/">home</a></li>		
 								@else
-								<li class="main_nav_item"><a href="#">home</a></li>	
+								<li class="main_nav_item"><a href="/">home</a></li>	
 								<li class="main_nav_item"><a href="/user_packages">packages</a></li>
 								<li class="main_nav_item"><a href="/subscribed_packages/{{Auth::user()->id}}">my subscriptions</a></li>
 								@if(Auth::user()->isAdmin)
