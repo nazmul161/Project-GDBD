@@ -21,6 +21,11 @@ class HomeController extends Controller
     {
         return view('new_home');
     }
+    
+    public function new_hotel_func()
+    {
+        return view('hotel_view');
+    }
 
     /**
      * Show the application dashboard.
