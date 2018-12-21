@@ -26,4 +26,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::get('new_package', 'HomeController@new_package_func');
