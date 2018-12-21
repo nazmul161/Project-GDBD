@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::post('save_hotel_info','HomeController@save_hotel_info_func');
 
 Route::get('new_hotel', 'HomeController@new_hotel_func');
+
+Route::get('/home', 'HomeController@index')->name('home');
