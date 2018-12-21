@@ -26,7 +26,13 @@ class HomeController extends Controller
     {
         return view('hotel_view');
     }
-
+    
+    public function save_hotel_info_func(Request $req){
+        DB::table('hotels')->insert(
+             ['name' => $req->name, 'location' => $req->location]
+         );
+        return redirect('user_packages');
+     }
     /**
      * Show the application dashboard.
      *
