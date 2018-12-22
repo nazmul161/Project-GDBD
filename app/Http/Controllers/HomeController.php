@@ -78,6 +78,8 @@ class HomeController extends Controller
      {
          $join1 = DB::table('package_subscription')
              ->join('users', 'package_subscription.user_id', '=', 'users.id')
+             ->join('package', 'package_subscription.package_id', '=', 'package.id')
+             ->join('hotels', 'package.hotel_id', '=', 'hotels.id')
              ->join('apartments', 'package.hotel_id', '=', 'apartments.hotel_id')
              ->select('package.*', 'users.name','hotels.name')
              ->where('package_subscription.user_id','=',$user_id)
