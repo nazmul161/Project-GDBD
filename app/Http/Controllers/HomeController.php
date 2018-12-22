@@ -69,6 +69,7 @@ class HomeController extends Controller
          $join1 = DB::table('package')
              ->join('hotels', 'package.hotel_id', '=', 'hotels.id')
              ->join('apartments', 'package.hotel_id', '=', 'apartments.hotel_id')
+             ->select('package.*', 'hotels.name', 'apartments.apartment_no')
              ->get();
         return view('user_packages',['datas'=>$join1]);
          
