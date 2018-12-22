@@ -74,6 +74,17 @@ class HomeController extends Controller
         return view('user_packages',['datas'=>$join1]);
          
      }
+    public function subscribed_packages_func($user_id)
+     {
+         $join1 = DB::table('package_subscription')
+             ->join('users', 'package_subscription.user_id', '=', 'users.id')
+             ->join('apartments', 'package.hotel_id', '=', 'apartments.hotel_id')
+             ->select('package.*', 'users.name','hotels.name')
+             ->where('package_subscription.user_id','=',$user_id)
+             ->get();
+        return view('subscribed_packages_view',['datas'=>$join1]);
+         
+     } 
     /**
      * Show the application dashboard.
      *
