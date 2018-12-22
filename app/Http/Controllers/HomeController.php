@@ -81,7 +81,7 @@ class HomeController extends Controller
              ->join('package', 'package_subscription.package_id', '=', 'package.id')
              ->join('hotels', 'package.hotel_id', '=', 'hotels.id')
              ->join('apartments', 'package.hotel_id', '=', 'apartments.hotel_id')
-             ->select('package.*', 'users.name','hotels.name')
+             ->select('package.*', 'users.name','hotels.name','apartments.apartment_no')
              ->where('package_subscription.user_id','=',$user_id)
              ->get();
         return view('subscribed_packages_view',['datas'=>$join1]);
