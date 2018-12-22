@@ -50,6 +50,12 @@ class HomeController extends Controller
          );
         return redirect('user_packages');
      }
+     public function new_apartment_func()
+    {
+        $hotels = DB::table('hotels')->select('id', 'name')->get();
+      
+        return view('apartment_view',['datas'=>$hotels]);
+    }
     /**
      * Show the application dashboard.
      *
