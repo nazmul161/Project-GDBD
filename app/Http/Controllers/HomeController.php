@@ -74,6 +74,13 @@ class HomeController extends Controller
         return view('user_packages',['datas'=>$join1]);
          
      }
+     public function save_subscription_func($user_id,$pkg_id){
+        DB::table('package_subscription')->insert(
+          ['user_id' => $user_id , 'package_id' => $pkg_id]
+      
+      );
+
+      }
     public function subscribed_packages_func($user_id)
      {
          $join1 = DB::table('package_subscription')
