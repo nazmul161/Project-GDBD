@@ -40,6 +40,16 @@ class HomeController extends Controller
         return view('package_view',['datas'=>$hotels]);
         
     }
+    public function save_package_info_func(Request $req){
+        DB::table('package')->insert(
+             ['hotel_id' => $req->hotel_id , 'fare' => $req->fare,
+             'journey_time' => $req->journey_time, 'journey_place' => $req->journey_place,
+             'capacity' => $req->capacity, 'transport' => $req->transport
+ 
+         ]
+         );
+        return redirect('user_packages');
+     }
     /**
      * Show the application dashboard.
      *
