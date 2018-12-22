@@ -31,3 +31,5 @@ Route::get('new_package', 'HomeController@new_package_func');
 Route::post('save_package_info','HomeController@save_package_info_func');
 
 Route::get('new_apartment', 'HomeController@new_apartment_func');
+
+Route::post('save_apartment_info','HomeController@save_apartment_info_func');
