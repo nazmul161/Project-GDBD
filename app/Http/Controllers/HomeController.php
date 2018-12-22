@@ -33,7 +33,7 @@ class HomeController extends Controller
          );
         return redirect('user_packages');
      }
-     public function new_package_func()
+    public function new_package_func()
     {
         $hotels = DB::table('hotels')->select('id', 'name')->get();
       
@@ -50,7 +50,7 @@ class HomeController extends Controller
          );
         return redirect('user_packages');
      }
-     public function new_apartment_func()
+    public function new_apartment_func()
     {
         $hotels = DB::table('hotels')->select('id', 'name')->get();
       
@@ -63,6 +63,15 @@ class HomeController extends Controller
          ]
          );
         return redirect('new_apartment');
+     }
+    public function user_packages_func()
+     {
+         $join1 = DB::table('package')
+             ->join('hotels', 'package.hotel_id', '=', 'hotels.id')
+             ->join('apartments', 'package.hotel_id', '=', 'apartments.hotel_id')
+             ->get();
+        return view('user_packages',['datas'=>$join1]);
+         
      }
     /**
      * Show the application dashboard.
