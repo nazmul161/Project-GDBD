@@ -27,3 +27,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('new_package', 'HomeController@new_package_func');
+
+Route::post('save_package_info','HomeController@save_package_info_func');
