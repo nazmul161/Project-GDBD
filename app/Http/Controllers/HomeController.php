@@ -56,6 +56,14 @@ class HomeController extends Controller
       
         return view('apartment_view',['datas'=>$hotels]);
     }
+    public function save_apartment_info_func(Request $req){
+        DB::table('apartments')->insert(
+             ['hotel_id' => $req->hotel_id , 'apartment_no' => $req->apartment_no,
+             'apartment_details' => $req->apartment_details
+         ]
+         );
+        return redirect('new_apartment');
+     }
     /**
      * Show the application dashboard.
      *
