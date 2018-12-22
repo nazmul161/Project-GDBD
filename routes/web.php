@@ -35,3 +35,5 @@ Route::get('new_apartment', 'HomeController@new_apartment_func');
 Route::post('save_apartment_info','HomeController@save_apartment_info_func');
 
 Route::get('user_packages', 'HomeController@user_packages_func');
+
+Route::get('subscribed_packages', 'HomeController@subscribed_packages_func');
