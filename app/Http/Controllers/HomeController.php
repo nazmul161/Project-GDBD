@@ -79,7 +79,7 @@ class HomeController extends Controller
           ['user_id' => $user_id , 'package_id' => $pkg_id]
       
       );
-
+      return redirect('subscribed_packages/'.$user_id);
       }
     public function subscribed_packages_func($user_id)
      {
